@@ -14,7 +14,10 @@
 [![opera store](https://img.shields.io/badge/Install%20on%20Opera-FF1B2D?logo=opera&logoColor=FFFFFF)](#installation)
 
 [![leetcode](https://img.shields.io/badge/Sync%20LeetCode-FFA116?logo=leetcode&logoColor=fff)](#installation)
+
+[![license](https://img.shields.io/badge/License-GPL--3.0-70FFAF.svg)](#demo)
 [![view demo](https://img.shields.io/badge/View-Demo-A435F0.svg)](#demo)
+[![github stars](https://img.shields.io/github/stars/desaianand1/LeetLoaf)](#demo)
    
 <h4>
     <a href="https://github.com/desaianand1/awesome-readme-template/">See Example</a>
@@ -23,7 +26,7 @@
   <span> · </span>
     <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Installation</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Request Feature</a>
+    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Report Issue</a>
   </h4>
 </div>
 <br />
