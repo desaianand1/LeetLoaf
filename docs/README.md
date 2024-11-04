@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="/docs/assets/logo-no-padding.svg" alt="logo" width="400" height="auto" />
+  <img src="/docs/assets/logo-no-padding.svg" alt="logo" width="300" height="auto" />
   <h1>Leet Loaf 🍞</h1>
   
   <p>
