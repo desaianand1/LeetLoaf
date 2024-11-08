@@ -2,8 +2,6 @@ node_modules
 
 # Output
 .output
-.vercel
-/.svelte-kit
 /build
 
 # OS
@@ -19,3 +17,21 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+dist
+test-results/
+package-lock.json
+yarn.lock
+/packages/create-svelte/template/CHANGELOG.md
+/packages/package/test/**/package
+/documentation/types.js
+.vercel_build_output
+.svelte-kit
+.cloudflare
+.pnpm-debug.log
+.netlify
+.turbo
+.vercel
+.test-tmp
+symlink-from
+.idea/
