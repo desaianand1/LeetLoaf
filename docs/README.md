@@ -4,7 +4,7 @@
   <h1>Leet Loaf 🍞</h1>
   
   <p>
-    🧑‍🍳 Freshly baked LeetCode solutions organized in your GitHub pantry!
+    🧑‍🍳 Freshly baked LeetCode submissions organized in your GitHub pantry!
   </p>
   
 [![chrome web store](https://img.shields.io/badge/Install%20on%20Chrome-4285F4?logo=chromewebstore&logoColor=FFFFFF)](#tbd)
@@ -41,8 +41,8 @@ Syncs your LeetCode solutions with your GitHub repository, provides robust data-
 
 ## 🧂 Well Seasoned & Feature Rich
 
-- [x] Automatic LeetCode problem definition and explanation generator
-- [x] Language-agnostic support. Solve LeetCode problems in a variety of languages? No problem!
+- [x] Auto-generated LeetCode problem definition and explanations
+- [x] Programming language-agnostic support. Solve LeetCode problems in a variety of languages? No problem!
 - [x] Cross-browser extension to catalogue and sync your completed LeetCode problems, automagically!
 - [x] Auto-generated static web site to browse through your work and prepare for interviews
 - [x] Concise summaries, diagrams and categorization for each problem so you can quickly revise and prepare by topic
@@ -55,7 +55,7 @@ Syncs your LeetCode solutions with your GitHub repository, provides robust data-
 
 ## 📐 Kitchen Layout
 
-Once Leet Loaf 🍞 finishes syncing your LeetCode submissions, you will be greeted with a Github repository laid out as shown below, fresh out of the oven ✨!
+Once Leet Loaf 🍞 finishes syncing your LeetCode submissions, you will be served a Github repository, laid out as shown below, fresh out of the oven ✨!
 
 ```sh
 /
@@ -75,11 +75,11 @@ Once Leet Loaf 🍞 finishes syncing your LeetCode submissions, you will be gree
 
 ## 🥐 Bakery - Static Site Generator
 
-A warm & cozy bakery of your solution loaves alongside problem definitions & explanations.
-Once a LeetCode submission has been synced to your new GitHub repository, you will be able to interactively browse through your submissions via an auto-generated static site!
+A warm & cozy bakery of your solution 'loaves' alongside problem definitions & explanations.
+Once a LeetCode submission has been synced to your new GitHub repository, you will be able to browse through your submissions
 
 > [!CAUTION]
-> WIP. Some features are still experimental and will improve & iterate over time.
+> WIP. Some features are still experimental and will improve over time.
 
 - [x] Sift through your solutions by topic, difficulty, tags and submitted languages
 - [x] Collate notes, tips and diagrams with your solutions to help prepare for interviews
@@ -90,7 +90,7 @@ Once a LeetCode submission has been synced to your new GitHub repository, you wi
 
 ## ⏲️ Oven - Browser Extension Installation
 
-The cross-browser extension prepares, kneads and bakes your LeetCode submissions into the bakery's (GitHub) pantry.
+The cross-browser extension prepares, kneads and bakes your LeetCode submissions into the bakery's pantry (GitHub).
 
 Install the extension on your favorite browser to effortlessly sync your LeetCode submissions.
 All major browsers supported!
