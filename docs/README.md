@@ -59,7 +59,7 @@ Once Leet Loaf 🍞 finishes syncing your LeetCode submissions, you will be gree
 
 ```sh
 /
-├── problems/
+├── pantry/                     # LeetCode problems
 │   ├── two-sum/
 │   │   ├── README.md           # Problem description
 │   │   ├── metadata.json       # Problem metadata
