@@ -22,7 +22,7 @@
 [![github stars](https://img.shields.io/github/stars/desaianand1/LeetLoaf)](https://github.com/desaianand1/LeetLoaf)
    
 <h4>
-    <a href="[https://github.com/desaianand1/LeetLoaf/issues](https://github.com/desaianand1/LeetLoaf?tab=readme-ov-file#%EF%B8%8F-taste-test---demo)">View Demo</a>
+    <a href="https://github.com/desaianand1/LeetLoaf?tab=readme-ov-file#%EF%B8%8F-taste-test---demo">View Demo</a>
   <span> · </span>
     <a href="https://github.com/desaianand1/LeetLoaf?tab=readme-ov-file#-well-seasoned--feature-rich">Features</a>
   <span> · </span>
