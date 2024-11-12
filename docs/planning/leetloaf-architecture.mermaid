@@ -1,0 +1,39 @@
+flowchart TB
+    subgraph "Browser Extension"
+        UI[SvelteKit UI]
+        Store[Svelte Store]
+        ExtAPI[Extension API Layer]
+        
+        UI --> Store
+        Store --> ExtAPI
+        
+        subgraph "Data Handlers"
+            LeetCode[LeetCode API Client]
+            GitHub[GitHub API Client]
+            Cache[IndexedDB Cache]
+        end
+        
+        ExtAPI --> LeetCode
+        ExtAPI --> GitHub
+        ExtAPI --> Cache
+    end
+    
+    subgraph "GitHub Repository"
+        Pantry[Problem Solutions]
+        Metadata[Problem Metadata]
+        Website[Static Site]
+    end
+    
+    LeetCode --> |Fetch Data| ExtAPI
+    GitHub --> |Sync| Pantry
+    GitHub --> |Generate| Website
+    
+    subgraph "LeetCode APIs"
+        Problems[Problem Data]
+        Solutions[User Solutions]
+        Profile[User Profile]
+        
+        LeetCode --> Problems
+        LeetCode --> Solutions
+        LeetCode --> Profile
+    end
