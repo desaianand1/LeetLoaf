@@ -11,7 +11,11 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
-		"test": "pnpm run test:unit -- --run"
+		"test": "pnpm run test:unit -- --run",
+		"lint-staged": "lint-staged",
+		"a11y": "svelte-check --a11y",
+		"security-check": "pnpm audit && svelte-check --diagnostic-sources js,ts,svelte --fail-on-warnings",
+		"prepare": "cd .. && husky oven/.husky"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.27.9",
@@ -28,6 +32,8 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.46.0",
 		"globals": "^15.12.0",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.8",
 		"prettier-plugin-tailwindcss": "^0.6.8",
@@ -48,5 +54,16 @@
 	"dependencies": {
 		"@floating-ui/dom": "^1.6.12",
 		"mode-watcher": "^0.4.1"
+	},
+	"lint-staged": {
+		"*.{js,ts,svelte}": [
+			"prettier --write",
+			"eslint --fix",
+			"pnpm a11y",
+			"pnpm security-check"
+		],
+		"*.{json,css,md}": [
+			"prettier --write"
+		]
 	}
 }
