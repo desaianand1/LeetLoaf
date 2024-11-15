@@ -74,27 +74,33 @@ async function handleSyncSolutions(): Promise<{ success: boolean }> {
 	return { success: true };
 }
 
-browser.runtime.onMessage.addListener((message: unknown, sender: Browser.Runtime.MessageSender, sendResponse: (response?: any) => void) => {
-  if (typeof message === 'object' && message !== null && 'type' in message) {
-    const typedMessage = message as Message;
-    
-    switch (typedMessage.type) {
-      case 'GITHUB_AUTH':
-        if (typeof typedMessage.payload?.authUrl === 'string') {
-          handleGithubAuth(typedMessage.payload.authUrl)
-            .then(sendResponse)
-            .catch((error) => sendResponse({ error: error.message }));
-          return true; // Indicates that we will send a response asynchronously
-        }
-        break;
-      case 'SYNC_SOLUTIONS':
-        handleSyncSolutions()
-          .then(sendResponse)
-          .catch((error) => sendResponse({ error: error.message }));
-        return true; // Indicates that we will send a response asynchronously
-    }
-  }
-  
-  sendResponse({ error: 'Invalid message format' });
-  return true; // Indicates that we sent a response synchronously
-});
+browser.runtime.onMessage.addListener(
+	(
+		message: unknown,
+		sender: Browser.Runtime.MessageSender,
+		sendResponse: (response?: any) => void
+	) => {
+		if (typeof message === 'object' && message !== null && 'type' in message) {
+			const typedMessage = message as Message;
+
+			switch (typedMessage.type) {
+				case 'GITHUB_AUTH':
+					if (typeof typedMessage.payload?.authUrl === 'string') {
+						handleGithubAuth(typedMessage.payload.authUrl)
+							.then(sendResponse)
+							.catch((error) => sendResponse({ error: error.message }));
+						return true; // Indicates that we will send a response asynchronously
+					}
+					break;
+				case 'SYNC_SOLUTIONS':
+					handleSyncSolutions()
+						.then(sendResponse)
+						.catch((error) => sendResponse({ error: error.message }));
+					return true; // Indicates that we will send a response asynchronously
+			}
+		}
+
+		sendResponse({ error: 'Invalid message format' });
+		return true; // Indicates that we sent a response synchronously
+	}
+);

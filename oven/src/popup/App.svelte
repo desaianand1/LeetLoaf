@@ -17,7 +17,7 @@
 	import AlertCircle from '~icons/lucide/alert-circle';
 	import GitHub from '~icons/simple-icons/github';
 
-	let { sync , setSyncStatus }: AppProps = $props();
+	let { sync, setSyncStatus }: AppProps = $props();
 
 	let isLoading = $state(false);
 	let error = $state<string | null>(null);
@@ -123,7 +123,7 @@
 		</Card.Content>
 
 		<Card.Footer>
-			<p class="text-muted-foreground text-xs">
+			<p class="text-xs text-muted-foreground">
 				Last synced: {lastSyncTime ? new Date(lastSyncTime).toLocaleString() : 'Never'}
 			</p>
 		</Card.Footer>
