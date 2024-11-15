@@ -7,9 +7,9 @@
 		"baseColor": "stone"
 	},
 	"aliases": {
-		"components": "$lib/components",
-		"utils": "$lib/utils",
-		"ui": "$lib/components/ui",
+		"components": "@/components",
+		"utils": "@/utils",
+		"ui": "@/components/ui",
 		"hooks": "$lib/hooks"
 	},
 	"typescript": true,
