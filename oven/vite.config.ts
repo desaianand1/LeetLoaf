@@ -1,11 +1,15 @@
 import { defineConfig } from 'vitest/config';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import Icons from 'unplugin-icons/vite';
 import webExtension from 'vite-plugin-web-extension';
 import path from 'path';
 
 export default defineConfig({
 	plugins: [
 		svelte(),
+		Icons({
+			compiler: 'svelte'
+		}),
 		webExtension({
 			manifest: () => ({
 				manifest_version: 3,
@@ -25,7 +29,13 @@ export default defineConfig({
 						matches: ['https://leetcode.com/*'],
 						js: ['src/content/index.ts']
 					}
-				]
+				],
+				icons: {
+					'16': 'static/icons/icon16.png',
+					'32': 'static/icons/icon32.png',
+					'48': 'static/icons/icon48.png',
+					'128': 'static/icons/icon128.png'
+				}
 			})
 		})
 	],
@@ -34,7 +44,13 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			$lib: path.resolve('./src/lib')
+			'@': path.resolve(__dirname, 'src'),
+			'@/components': path.resolve(__dirname, 'src/components'),
+			'@/utils': path.resolve(__dirname, 'src/utils'),
+			'@/stores': path.resolve(__dirname, 'src/stores'),
+			'@/popup': path.resolve(__dirname, 'src/popup'),
+			'@/background': path.resolve(__dirname, 'src/background'),
+			'@/content': path.resolve(__dirname, 'src/content')
 		}
 	}
 });
