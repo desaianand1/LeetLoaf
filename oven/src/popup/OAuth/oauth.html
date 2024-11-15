@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leet Loaf 🍞 - GitHub Authentication</title>
+  <link rel="stylesheet" href="@/app.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { mount } from 'svelte';
+    import OAuth from '@/popup/OAuth/OAuth.svelte'
+
+    const target = document.getElementById('app');
+    if (!target) {
+      throw new Error('Could not find app element');
+    }
+
+    mount(OAuth, { target });
+  </script>
+</body>
+</html>
