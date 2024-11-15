@@ -1,57 +1,54 @@
+# Project file structure
+
+```sh
 oven/
 ├── src/
-│   ├── lib/                    # Shared utilities and components
-│   │   ├── components/         # Reusable UI components
-│   │   │   ├── ui/             # shadcn/ui components
-│   │   │   └── shared/         # Custom shared components
-│   │   ├── stores/             # Svelte stores
-│   │   │   ├── auth.ts         # Authentication state
-│   │   │   ├── sync.ts         # Sync state management
-│   │   │   └── settings.ts     # Extension settings
-│   │   ├── api/                # API clients
-│   │   │   ├── leetcode/       # LeetCode API integration
-│   │   │   └── github/         # GitHub API integration
-│   │   └── utils/              # Shared utilities
-│   │       ├── storage.ts      # Browser storage helpers
-│   │       └── types.ts        # Shared TypeScript types
-│   │
+│   ├── components/              # Shared components
+│   │   ├── ui/                  # shadcn-svelte components
+│   │   │   ├── alert/
+│   │   │   ├── button/
+│   │   │   ├── card/
+│   │   │   └── ...
+│   │   ├── auth/               # Authentication components
+│   │   ├── sync/               # Sync related components
+│   │   └── common/             # Other shared components
+│   ├── stores/                 # Svelte stores
+│   │   ├── auth.ts
+│   │   ├── sync.ts
+│   │   └── settings.ts
+│   ├── utils/                  # Utility functions
+│   │   ├── api/                # API related utilities
+│   │   │   ├── github.ts
+│   │   │   └── leetcode.ts
+│   │   └── cn.ts               # Class name utilities
 │   ├── popup/                  # Extension popup
-│   │   ├── index.html          # Popup entry point
-│   │   ├── index.ts            # Popup script entry
-│   │   ├── App.svelte          # Root popup component
-│   │   └── components/         # Popup-specific components
-│   │
-│   ├── options/                # Extension options page
 │   │   ├── index.html
 │   │   ├── index.ts
-│   │   ├── App.svelte
-│   │   └── components/
-│   │
+│   │   └── App.svelte
+│   ├── background/             # Service worker
+│   │   ├── services/           # Background services
+│   │   │   ├── auth.ts
+│   │   │   ├── sync.ts
+│   │   │   └── storage.ts
+│   │   └── index.ts
 │   ├── content/                # Content scripts
-│   │   ├── index.ts            # Content script entry
-│   │   ├── components/         # Content script components
-│   │   └── styles/             # Content script styles
-│   │
-│   └── background/             # Service worker
-│       └── index.ts            # Background script entry
-│
-├── public/                     # Static assets
-│   ├── icons/                  # Extension icons
-│   └── assets/                 # Other assets
-│
+│   │   ├── services/           # Content script services
+│   │   │   ├── parser.ts
+│   │   │   └── observer.ts
+│   │   └── index.ts
+│   └── app.css                 # Global styles
+├── static/                     # Static assets
+│   └── icons/                  # Extension icons
 ├── tests/                      # Test files
-│   ├── unit/
-│   └── integration/
-│
-├── types/                      # Type definitions
-│   └── vite-env.d.ts          # Vite environment types
-│
-├── .eslintrc.js               # ESLint configuration
-├── .prettierrc                # Prettier configuration
-├── manifest.config.ts         # Manifest configuration
+│   └── unit/
+│       ├── services/
+│       └── utils/
+├── .eslintrc.js
+├── .prettierrc
+├── components.json             # shadcn config
 ├── package.json
-├── postcss.config.js          # PostCSS configuration
-├── svelte.config.js           # Svelte configuration
-├── tailwind.config.ts         # Tailwind configuration
-├── tsconfig.json              # TypeScript configuration
-└── vite.config.ts             # Vite configuration
+├── postcss.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+└── vite.config.ts
+```
