@@ -16,6 +16,18 @@ const config: Config = {
 		},
 		extend: {
 			colors: {
+				toast: {
+					50: '#e8ddbb', // dutch-white - lightest
+					100: '#d2b589', // tan
+					200: '#e6b479', // buff
+					300: '#c68a53', // persian-orange
+					400: '#a76947', // brown-sugar
+					500: '#6b3620', // seal-brown-2
+					600: '#5c3625', // seal-brown
+					700: '#811c14', // ou-crimson
+					800: '#b43328', // fire-brick
+					900: '#d65951' // indian-red
+				},
 				border: 'hsl(var(--border) / <alpha-value>)',
 				input: 'hsl(var(--input) / <alpha-value>)',
 				ring: 'hsl(var(--ring) / <alpha-value>)',
