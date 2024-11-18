@@ -1,87 +1,40 @@
-import browser from 'webextension-polyfill';
-import type { LeetCodeProblem } from '$lib/shared/types';
+import Browser from 'webextension-polyfill';
 
-class LeetCodeContentScript {
-	private static instance: LeetCodeContentScript;
-	private observer: MutationObserver | null = null;
+// Listen for messages from background
+Browser.runtime.onMessage.addListener((message) => {
+  if (message.type === 'CHECK_LEETCODE_AUTH') {
+    return checkLeetCodeAuth();
+  }
+});
 
-	private constructor() {
-		this.initialize();
-	}
+async function checkLeetCodeAuth() {
+  try {
+    // Get CSRF token from meta tag or cookie
+    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || 
+                     document.cookie.split('; ').find(row => row.startsWith('csrftoken='))?.split('=')[1];
 
-	static getInstance(): LeetCodeContentScript {
-		if (!LeetCodeContentScript.instance) {
-			LeetCodeContentScript.instance = new LeetCodeContentScript();
-		}
-		return LeetCodeContentScript.instance;
-	}
+    // Get all cookies for leetcode.com
+    const cookies = document.cookie;
 
-	private async initialize() {
-		// Set up page mutation observer
-		this.setupObserver();
+    // If we have both, consider auth potentially valid
+    if (csrfToken && cookies) {
+      return { csrfToken, cookies };
+    }
 
-		// Listen for messages from popup/background
-		browser.runtime.onMessage.addListener((message) => this.handleMessage(message));
-	}
-
-	private setupObserver() {
-		this.observer = new MutationObserver(() => {
-			this.checkForProblemSubmission();
-		});
-
-		// Start observing page changes
-		this.observer.observe(document.body, {
-			childList: true,
-			subtree: true
-		});
-	}
-
-	private async checkForProblemSubmission() {
-		// Check if we're on a submission success page
-		if (
-			window.location.pathname.includes('/submissions/') &&
-			document.body.textContent?.includes('Accepted')
-		) {
-			const problem = await this.extractProblemData();
-			if (problem) {
-				await this.notifyBackgroundScript(problem);
-			}
-		}
-	}
-
-	private async extractProblemData(): Promise<LeetCodeProblem | null> {
-		try {
-			// Extract problem data from page
-			// This is a placeholder - actual implementation will need to parse the DOM or use LeetCode's API
-			return {
-				id: '',
-				title: '',
-				titleSlug: '',
-				difficulty: '',
-				tags: [],
-				code: '',
-				language: ''
-			};
-		} catch (error) {
-			console.error('Failed to extract problem data:', error);
-			return null;
-		}
-	}
-
-	private async notifyBackgroundScript(problem: LeetCodeProblem) {
-		await browser.runtime.sendMessage({
-			type: 'NEW_SOLUTION',
-			problem
-		});
-	}
-
-	private async handleMessage(message: any) {
-		switch (message.type) {
-			case 'GET_CURRENT_PROBLEM':
-				return this.extractProblemData();
-		}
-	}
+    return { error: 'Not authenticated with LeetCode' };
+  } catch (error) {
+    return { error: 'Failed to check LeetCode authentication' };
+  }
 }
 
-// Initialize content script
-LeetCodeContentScript.getInstance();
+// Detect if we're on a submission page
+const SUBMISSION_PATH_REGEX = /^\/problems\/[\w-]+\/submissions\/\d+/;
+
+if (SUBMISSION_PATH_REGEX.test(window.location.pathname)) {
+  Browser.runtime.sendMessage({ 
+    type: 'NEW_SUBMISSION',
+    payload: {
+      path: window.location.pathname
+    }
+  });
+}
