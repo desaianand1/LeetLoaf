@@ -32,7 +32,7 @@
 	async function handleRetry() {
 		window.close();
 		// Reopen the popup
-		const views = await Browser.extension.getViews({ type: 'popup' });
+		const views = Browser.extension.getViews({ type: 'popup' });
 		if (views.length > 0) {
 			views[0].location.reload();
 		}
@@ -159,7 +159,7 @@
 	</Card.Root>
 </main>
 
-<style>
+<style lang="postcss">
 	:global(body) {
 		@apply bg-background text-foreground m-0 antialiased;
 	}
