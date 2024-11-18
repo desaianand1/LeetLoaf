@@ -40,8 +40,8 @@ importers:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
       bits-ui:
-        specifier: 1.0.0-next.57
-        version: 1.0.0-next.57(svelte@5.1.16)
+        specifier: 1.0.0-next.58
+        version: 1.0.0-next.58(svelte@5.1.16)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -63,6 +63,9 @@ importers:
       lint-staged:
         specifier: ^15.2.10
         version: 15.2.10
+      lucide-svelte:
+        specifier: ^0.460.1
+        version: 0.460.1(svelte@5.1.16)
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -842,8 +845,8 @@ packages:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
 
-  bits-ui@1.0.0-next.57:
-    resolution: {integrity: sha512-meXdwUM/fQv5bq6OgZCtGLAZjhBS1adVOu8rty5gLZ71bIbnK8/VHLX8FVSzIP99d0BglybxD7eAyjnZoelZJg==}
+  bits-ui@1.0.0-next.58:
+    resolution: {integrity: sha512-vxl6x/hmmEk32E9Y9ctVY3g7Svei1+6UqSNahYt6deDSa7Q4eKQ+f3CPSWdP2mTdYK3oWsdvlJkD+Tar+KZIiw==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.0.0-next.1
@@ -1776,6 +1779,11 @@ packages:
 
   lru-cache@4.1.5:
     resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
+
+  lucide-svelte@0.460.1:
+    resolution: {integrity: sha512-guJjJSeWlKivsEG51Xg41egunBMJcobhDmkLv/NYTXmXyCEwxMf1A+HX7RvDEKiXbXYgtLImih67tI08MSUOkA==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5.0.0-next.42
 
   magic-string@0.30.12:
     resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
@@ -3647,7 +3655,7 @@ snapshots:
 
   binary-extensions@2.3.0: {}
 
-  bits-ui@1.0.0-next.57(svelte@5.1.16):
+  bits-ui@1.0.0-next.58(svelte@5.1.16):
     dependencies:
       '@floating-ui/core': 1.6.8
       '@floating-ui/dom': 1.6.12
@@ -4614,6 +4622,10 @@ snapshots:
     dependencies:
       pseudomap: 1.0.2
       yallist: 2.1.2
+
+  lucide-svelte@0.460.1(svelte@5.1.16):
+    dependencies:
+      svelte: 5.1.16
 
   magic-string@0.30.12:
     dependencies:
