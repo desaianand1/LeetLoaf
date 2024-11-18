@@ -4,64 +4,86 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 20 14.3% 4.1%;
-		--muted: 60 4.8% 95.9%;
-		--muted-foreground: 25 5.3% 44.7%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 20 14.3% 4.1%;
-		--card: 0 0% 100%;
-		--card-foreground: 20 14.3% 4.1%;
-		--border: 20 5.9% 90%;
-		--input: 20 5.9% 90%;
-		--primary: 24 9.8% 10%;
-		--primary-foreground: 60 9.1% 97.8%;
-		--secondary: 60 4.8% 95.9%;
-		--secondary-foreground: 24 9.8% 10%;
-		--accent: 60 4.8% 95.9%;
-		--accent-foreground: 24 9.8% 10%;
-		--destructive: 0 72.2% 50.6%;
-		--destructive-foreground: 60 9.1% 97.8%;
-		--ring: 20 14.3% 4.1%;
+		/* Light theme */
+		--background: 45 48% 95%; /* toast-50 (dutch-white) */
+		--foreground: 20 33% 26%; /* toast-600 (seal-brown) */
+
+		--muted: 36 47% 82%; /* toast-100 (tan) */
+		--muted-foreground: 20 33% 26%; /* toast-600 */
+
+		--popover: 45 48% 95%; /* toast-50 */
+		--popover-foreground: 20 33% 26%; /* toast-600 */
+
+		--card: 45 48% 95%; /* toast-50 */
+		--card-foreground: 20 33% 26%; /* toast-600 */
+
+		--border: 33 45% 67%; /* toast-300 (persian-orange) */
+		--input: 33 45% 67%; /* toast-300 */
+
+		--primary: 4 56% 45%; /* toast-800 (fire-brick) */
+		--primary-foreground: 45 48% 95%; /* toast-50 */
+
+		--secondary: 36 47% 82%; /* toast-100 (tan) */
+		--secondary-foreground: 20 33% 26%; /* toast-600 */
+
+		--accent: 33 45% 67%; /* toast-300 (persian-orange) */
+		--accent-foreground: 20 33% 26%; /* toast-600 */
+
+		--destructive: 7 74% 29%; /* toast-700 (ou-crimson) */
+		--destructive-foreground: 45 48% 95%; /* toast-50 */
+
+		--ring: 4 56% 45%; /* toast-800 (fire-brick) */
 		--radius: 0.5rem;
-		--sidebar-background: 0 0% 98%;
-		--sidebar-foreground: 240 5.3% 26.1%;
-		--sidebar-primary: 240 5.9% 10%;
-		--sidebar-primary-foreground: 0 0% 98%;
-		--sidebar-accent: 240 4.8% 95.9%;
-		--sidebar-accent-foreground: 240 5.9% 10%;
-		--sidebar-border: 220 13% 91%;
-		--sidebar-ring: 217.2 91.2% 59.8%;
+
+		--sidebar-background: 45 48% 95%; /* toast-50 */
+		--sidebar-foreground: 20 33% 26%; /* toast-600 */
+		--sidebar-primary: 4 56% 45%; /* toast-800 */
+		--sidebar-primary-foreground: 45 48% 95%; /* toast-50 */
+		--sidebar-accent: 33 45% 67%; /* toast-300 */
+		--sidebar-accent-foreground: 20 33% 26%; /* toast-600 */
+		--sidebar-border: 33 45% 67%; /* toast-300 */
+		--sidebar-ring: 4 56% 45%; /* toast-800 */
 	}
 
 	.dark {
-		--background: 20 14.3% 4.1%;
-		--foreground: 60 9.1% 97.8%;
-		--muted: 12 6.5% 15.1%;
-		--muted-foreground: 24 5.4% 63.9%;
-		--popover: 20 14.3% 4.1%;
-		--popover-foreground: 60 9.1% 97.8%;
-		--card: 20 14.3% 4.1%;
-		--card-foreground: 60 9.1% 97.8%;
-		--border: 12 6.5% 15.1%;
-		--input: 12 6.5% 15.1%;
-		--primary: 60 9.1% 97.8%;
-		--primary-foreground: 24 9.8% 10%;
-		--secondary: 12 6.5% 15.1%;
-		--secondary-foreground: 60 9.1% 97.8%;
-		--accent: 12 6.5% 15.1%;
-		--accent-foreground: 60 9.1% 97.8%;
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 60 9.1% 97.8%;
-		--ring: 24 5.7% 82.9%;
-		--sidebar-background: 240 5.9% 10%;
-		--sidebar-foreground: 240 4.8% 95.9%;
-		--sidebar-primary: 224.3 76.3% 48%;
-		--sidebar-primary-foreground: 0 0% 100%;
-		--sidebar-accent: 240 3.7% 15.9%;
-		--sidebar-accent-foreground: 240 4.8% 95.9%;
-		--sidebar-border: 240 3.7% 15.9%;
-		--sidebar-ring: 217.2 91.2% 59.8%;
+		/* Dark theme */
+		--background: 20 33% 26%; /* toast-600 (seal-brown) */
+		--foreground: 45 48% 95%; /* toast-50 */
+
+		--muted: 24 42% 28%; /* toast-500 */
+		--muted-foreground: 36 47% 82%; /* toast-100 */
+
+		--popover: 20 33% 26%; /* toast-600 */
+		--popover-foreground: 45 48% 95%; /* toast-50 */
+
+		--card: 20 33% 26%; /* toast-600 */
+		--card-foreground: 45 48% 95%; /* toast-50 */
+
+		--border: 33 45% 67%; /* toast-300 */
+		--input: 33 45% 67%; /* toast-300 */
+
+		--primary: 4 56% 45%; /* toast-800 (fire-brick) */
+		--primary-foreground: 45 48% 95%; /* toast-50 */
+
+		--secondary: 24 42% 28%; /* toast-500 */
+		--secondary-foreground: 45 48% 95%; /* toast-50 */
+
+		--accent: 33 45% 67%; /* toast-300 */
+		--accent-foreground: 45 48% 95%; /* toast-50 */
+
+		--destructive: 7 74% 29%; /* toast-700 */
+		--destructive-foreground: 45 48% 95%; /* toast-50 */
+
+		--ring: 4 56% 45%; /* toast-800 */
+
+		--sidebar-background: 24 42% 28%; /* toast-500 */
+		--sidebar-foreground: 45 48% 95%; /* toast-50 */
+		--sidebar-primary: 4 56% 45%; /* toast-800 */
+		--sidebar-primary-foreground: 45 48% 95%; /* toast-50 */
+		--sidebar-accent: 33 45% 67%; /* toast-300 */
+		--sidebar-accent-foreground: 45 48% 95%; /* toast-50 */
+		--sidebar-border: 33 45% 67%; /* toast-300 */
+		--sidebar-ring: 4 56% 45%; /* toast-800 */
 	}
 }
 
